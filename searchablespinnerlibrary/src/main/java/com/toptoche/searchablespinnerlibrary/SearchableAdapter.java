@@ -26,7 +26,7 @@ public class SearchableAdapter extends ArrayAdapter<String> implements Filterabl
 
     @Override
     public String getItem(int position) {
-        return filteredItems.get(position);
+        return filteredItems.get(position).toString();
     }
 
     private List<String> getAllItems() {
