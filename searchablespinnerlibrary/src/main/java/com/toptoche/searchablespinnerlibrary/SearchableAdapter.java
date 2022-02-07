@@ -15,21 +15,21 @@ public class SearchableAdapter extends ArrayAdapter<String> implements Filterabl
     private ArrayList<String> items;
     private ArrayList<String> filteredItems;
 
+    SearchableAdapter(Context context, int resource, ArrayList<Object> objects) {
+        ArrayList<String> temp = new ArrayList<String>();
+        for (int i = 0; i < objects.size(); i++) {
+            String s = objects.get(i).toString();
+            temp.add(s);
+        }
+        super(context, resource, temp);
+        this.items = temp;
+        this.filteredItems = temp;
+    }
+
     SearchableAdapter(Context context, int resource, ArrayList<String> objects) {
         super(context, resource, objects);
         this.items = objects;
         this.filteredItems = objects;
-    }
-
-    SearchableAdapter(Context context, int resource, ArrayList<Object> objects) {
-        super(context, resource, objects);
-        this.items = new ArrayList<String>();
-        this.filteredItems = new ArrayList<String>();
-        for (int i = 0; i < objects.size(); i++) {
-            String s = objects.get(i).toString();
-            this.items.add(s);
-            this.filteredItems.add(s);
-        }
     }
 
     @Override
