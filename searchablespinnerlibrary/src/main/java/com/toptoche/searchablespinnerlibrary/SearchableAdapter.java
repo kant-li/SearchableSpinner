@@ -8,6 +8,8 @@ import android.widget.Filterable;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.io.*;
+
 public class SearchableAdapter extends ArrayAdapter<String> implements Filterable {
 
     private ArrayList<String> items;
@@ -22,6 +24,8 @@ public class SearchableAdapter extends ArrayAdapter<String> implements Filterabl
             this.items = new ArrayList<String>();
             this.filteredItems = new ArrayList<String>();
             for (int i = 0; i < objects.size(); i++) {
+                System.out.println(objects.get(i));
+                System.out.println(objects.get(i).toString());
                 this.items.add(objects.get(i).toString());
                 this.filteredItems.add(objects.get(i).toString());
             }
