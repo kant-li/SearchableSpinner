@@ -26,8 +26,10 @@ public class SearchableAdapter extends ArrayAdapter<String> implements Filterabl
             for (int i = 0; i < objects.size(); i++) {
                 System.out.println(objects.get(i));
                 System.out.println(objects.get(i).toString());
-                this.items.add(objects.get(i).toString());
-                this.filteredItems.add(objects.get(i).toString());
+                String s = objects.get(i).toString();
+                System.out.println(s);
+                this.items.add(s);
+                this.filteredItems.add(s);
             }
         }
     }
